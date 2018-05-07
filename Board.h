@@ -40,7 +40,7 @@ class IllegalCoordinateException : public exception{
 public:
     int x,y;
     IllegalCoordinateException(int x , int y){this->x=x ,this->y=y;}
-    string theCoordinate()const{
+    std::string theCoordinate()const{
         return to_string(x)+","+to_string(y);
     }
 };
