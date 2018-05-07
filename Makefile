@@ -1,5 +1,13 @@
-a: main.o Board.o MyChar.o
-	clang++-5.0 -std=c++14 *.o -Wall main.o -o output
+CXX=clang++-5.0
+CXXFLAGS=-std=c++17 
 
-main.o: main.cpp Board.cpp MyChar.cpp
-	clang++-5.0 -std=c++14 main.cpp Board.cpp MyChar.cpp
+make: main.o Board.o MyChar.o
+	$(CXX) $(CXXFLAGS) main.cpp *.o -o a.out
+	valgrind --tool=memcheck ./a.out
+
+Board.o: Board.cpp MyChar.cpp Board.h MyChar.H
+	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
+	$(CXX) $(CXXFLAGS) -c MyChar.cpp -o MyChar.o
+
+clean:
+	rm *.o a.out
