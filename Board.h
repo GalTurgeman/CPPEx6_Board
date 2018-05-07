@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include "MyChar.h"
+#include <string>
 
 using namespace std;
 
