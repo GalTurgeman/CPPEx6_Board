@@ -45,3 +45,10 @@ MyChar &MyChar::operator=(const MyChar& mc) {
 MyChar::operator char() {
     return this->c;
 }
+bool MyChar::operator == (const MyChar l ){
+    if(this->c == l.c) {
+        return true;
+    }
+    return false;
+
+}

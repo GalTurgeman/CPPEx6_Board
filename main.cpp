@@ -53,6 +53,6 @@ int main() {
     cout << board1 << endl;  /* Shows a board with an X at top-left and O at bottom-right */
 
     cout << "Good bye!" << endl;
-
+    cout << (board1 == board1) << endl;
     return 0;
 }

@@ -10,48 +10,55 @@
 
 using namespace std;
 
-class Board{
+class Board {
 public:
     int size;
-    MyChar ** board;
+    MyChar **board;
+
     Board();
+
     Board(int);
+
     Board(const Board &b);
 
     //______________________//
-    friend ostream& operator<<(std::ostream & output, const Board &b);
+    friend ostream &operator<<(std::ostream &output, const Board &b);
 
-    MyChar&operator[](std::pair<int,int>);
-    Board& operator=(char);
-    Board& operator=(const Board&);
+    MyChar &operator[](std::pair<int, int>);
+
+    Board &operator=(char);
+
+    Board &operator=(const Board &);
+    bool operator==(const Board &);
 
 };
-
-inline ostream& operator << (std::ostream &output, const Board &b){
+inline ostream &operator<<(std::ostream &output, const Board &b) {
     for (int i = 0; i < b.size; ++i) {
-        for (int j = 0; j <b.size ; ++j) {
+        for (int j = 0; j < b.size; ++j) {
             output << b.board[i][j].getChar();
         }
-        output<<endl;
+        output << endl;
     }
     return output;
 }
 
-class IllegalCoordinateException : public exception{
+class IllegalCoordinateException : public exception {
 public:
-    int x,y;
-    IllegalCoordinateException(int x , int y){this->x=x ,this->y=y;}
-    std::string theCoordinate()const{
-        return std::to_string(x)+","+std::to_string(y);
-    }
+    int x, y;
+
+    IllegalCoordinateException(int x, int y) { this->x = x, this->y = y; }
+
+    string theCoordinate() const {
+        return to_string(x) + "," + to_string(y);
+    };
 };
+class IllegalCharException : public exception {
+    public:
+        char c;
 
-class IllegalCharException : public exception{
-public:
-    char c;
-    IllegalCharException(char c){this->c =c;}
+    IllegalCharException(char c) { this->c = c; }
 
-    char theChar() const{
+    char theChar() const {
         return (this->c);
     }
 };

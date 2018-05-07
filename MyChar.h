@@ -20,11 +20,13 @@ public:
 
     MyChar&operator =(char);
     MyChar&operator=(const MyChar&);
+    bool operator == (const MyChar l );
     operator char();
     friend ostream& operator<<(std::ostream & output, const MyChar mc);
 };
-inline ostream& operator<<(std::ostream & output, const MyChar mc){
-    output<<mc.c<<endl;
+inline ostream& operator<<(std::ostream & output, const MyChar mc) {
+    output << mc.c << endl;
+
     return output;
 }
 

@@ -76,11 +76,23 @@ Board &Board::operator=(const Board & b) {
         return *this;
 
 }
-MyChar &Board::operator[](std::pair<int,int> p) {
+MyChar &Board::operator[] (std::pair<int,int> p) {
 
     if(p.first >= this->size || p.second >= this->size || p.second < 0 || p.first < 0){
         IllegalCoordinateException ex(p.first,p.second);
         throw ex;
     }
     else return this->board[p.first][p.second];
+}
+
+bool Board::operator==(const Board &l){
+    if(size != l.size) return false;
+    else{
+        for (int i = 0; i <size; ++i) {
+            for (int j = 0; j <size ; ++j) {
+             if(this->board[i][j] != l.board[i][j]) return false;
+            }
+        }
+    }
+    return true;
 }
