@@ -49,8 +49,8 @@ public:
     IllegalCoordinateException(int x, int y) { this->x = x, this->y = y; }
 
     string theCoordinate() const {
-        return to_string(x) + "," + to_string(y);
-    };
+        return to_string(x)+ "," +to_string(y);
+    }
 };
 class IllegalCharException : public exception {
     public:
