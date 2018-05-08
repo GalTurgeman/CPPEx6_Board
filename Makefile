@@ -1,5 +1,5 @@
-CXX = clang++14
-CXXFLAGS = -std=c++14
+CXX = clang++5.0
+CXXFLAGS = -std=c++17
 
 make: Board.o MyChar.o
 	
