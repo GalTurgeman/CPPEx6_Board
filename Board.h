@@ -20,11 +20,11 @@ public:
     Board(int);
 
     Board(const Board &b);
-
+    ~Board();
     //______________________//
-    friend ostream &operator<<(std::ostream &output, const Board &b);
+    friend ostream &operator<<(ostream &output, const Board &b);
 
-    MyChar &operator[](std::pair<int, int>);
+    MyChar &operator [] ( pair<int, int>);
 
     Board &operator=(char);
 
@@ -32,7 +32,7 @@ public:
     bool operator==(const Board &);
 
 };
-inline ostream &operator<<(std::ostream &output, const Board &b) {
+inline ostream &operator<<(ostream &output, const Board &b) {
     for (int i = 0; i < b.size; ++i) {
         for (int j = 0; j < b.size; ++j) {
             output << b.board[i][j].getChar();
@@ -41,6 +41,8 @@ inline ostream &operator<<(std::ostream &output, const Board &b) {
     }
     return output;
 }
+
+
 
 
 

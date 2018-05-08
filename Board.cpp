@@ -4,7 +4,7 @@
 
 
 #include "Board.h"
-
+#include "MyException.h"
 /**
  * Default Constructor init all board to '.'
  */
@@ -76,7 +76,7 @@ Board &Board::operator=(const Board & b) {
         return *this;
 
 }
-MyChar &Board::operator[] (std::pair<int,int> p) {
+MyChar &Board::operator[] (pair<int,int> p) {
 
     if(p.first >= this->size || p.second >= this->size || p.second < 0 || p.first < 0){
         IllegalCoordinateException ex(p.first,p.second);
@@ -95,4 +95,11 @@ bool Board::operator==(const Board &l){
         }
     }
     return true;
+}
+Board::~Board() {
+//    cout<<"destructor"<<endl;
+    for (int i = 0; i < size; ++i) {
+        delete board[i];
+    }
+    delete(board);
 }
