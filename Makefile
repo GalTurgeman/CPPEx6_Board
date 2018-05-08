@@ -1,4 +1,4 @@
-CXX = clang++
+CXX = clang++14
 CXXFLAGS = -std=c++14
 
 make: Board.o MyChar.o
