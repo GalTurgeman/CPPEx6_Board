@@ -2,7 +2,7 @@
 // Created by Gal on 07/05/2018.
 //
 #include "Board.h"
-#include "MyChar.h"
+
 /**
  * "Empty" constructor .
  * @param c
@@ -24,10 +24,20 @@ MyChar::MyChar(const MyChar &other) {
 MyChar::MyChar(char c ) {
     this->c = c;
 }
-
+/**
+ * Getter
+ * @param c
+ */
 char MyChar::getChar() {return this->c;};
+/**
+ * Setter
+ * @param c
+ */
 void MyChar::setChar(char c) {this->c =c;}
-
+/**
+ * override = operator
+ * @param c
+ */
 MyChar &MyChar::operator=(char c) {
     if( c != 'X' && c != 'O' && c!= '.'){
         IllegalCharException ex(c);
