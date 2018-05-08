@@ -1,7 +1,8 @@
 //
 // Created by Gal on 07/05/2018.
 //
-#include "Board.h"
+#include "MyChar.h"
+#include "MyException.h"
 
 /**
  * "Empty" constructor .

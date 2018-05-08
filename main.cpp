@@ -1,5 +1,5 @@
+#include "MyException.h
 #include "Board.h"
-
 #include <iostream>
 using namespace std;
 

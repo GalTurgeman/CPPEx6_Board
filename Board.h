@@ -42,27 +42,6 @@ inline ostream &operator<<(std::ostream &output, const Board &b) {
     return output;
 }
 
-class IllegalCoordinateException : public exception {
-public:
-    int x, y;
-
-    IllegalCoordinateException(int x, int y) { this->x = x, this->y = y; }
-
-    string theCoordinate() const {
-        return to_string(x)+ "," +to_string(y);
-    }
-};
-class IllegalCharException : public exception {
-    public:
-        char c;
-
-    IllegalCharException(char c) { this->c = c; }
-
-    char theChar() const {
-        return (this->c);
-    }
-};
-
 
 
 
