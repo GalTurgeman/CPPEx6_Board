@@ -61,5 +61,7 @@ bool MyChar::operator == (const MyChar l ){
         return true;
     }
     return false;
-
+}
+bool MyChar::operator==(const char c) {
+    return this->c == c;
 }

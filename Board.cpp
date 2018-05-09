@@ -95,6 +95,7 @@ bool Board::operator==(const Board &l){
     }
     return true;
 }
+
 Board::~Board() {
 //    cout<<"destructor"<<endl;
     for (int i = 0; i < size; ++i) {
