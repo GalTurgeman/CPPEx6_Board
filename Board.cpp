@@ -77,7 +77,7 @@ Board &Board::operator=(const Board& other) {
             for (int i = 0; i <size ; i++) {
                 board[i] = new MyChar[size];
             }
-            for (int i = 0; i < this->size; i++) {
+            for (int i = 0; i < this->size; ++i) {
                 for (int j = 0; j < this->size; j++) {
                     this->board[i][j] = MyChar{other.board[i][j].getChar()};
                 }
@@ -91,7 +91,7 @@ Board &Board::operator=(const Board& other) {
  * @param Board b
  */
 void Board::clean(const Board& b){
-    for (int i = 0; i <b.size ; ++i) {
+    for (int i = 0; i <b.size ; i++) {
         delete[] b.board[i];
     }
     delete[]b.board;
