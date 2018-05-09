@@ -25,10 +25,9 @@ public:
     //______________________//
     friend ostream &operator<<(ostream &output, const Board &b);
 
-//    MyChar &operator [] ( pair<int, int>);
+    void clean(const Board& b);
     MyChar &operator [] (list<int>);
     Board &operator=(char);
-
     Board &operator=(const Board &);
     bool operator==(const Board &)const;
 
