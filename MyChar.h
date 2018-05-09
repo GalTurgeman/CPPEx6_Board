@@ -20,14 +20,15 @@ public:
 
     MyChar&operator =(char);
     MyChar&operator=(const MyChar&);
-    bool operator == (const MyChar l );
+    bool operator == (const MyChar);
     bool operator == (char);
+    bool operator != (const MyChar );
+    bool operator != (char);
     operator char();
     friend ostream& operator<<(std::ostream & output, const MyChar mc);
 };
 inline ostream& operator<<(std::ostream & output, const MyChar mc) {
     output << mc.c << endl;
-
     return output;
 }
 
