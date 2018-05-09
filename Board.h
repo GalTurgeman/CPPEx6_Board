@@ -24,7 +24,6 @@ public:
     ~Board();
     //______________________//
     friend ostream &operator<<(ostream &output, const Board &b);
-
     void clean(const Board& b);
     MyChar &operator [] (list<int>);
     Board &operator=(char);
