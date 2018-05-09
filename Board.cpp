@@ -37,7 +37,7 @@ Board::Board(const Board& b) {
     this->size = b.size;
     board = new MyChar*[size];
     for (int i = 0; i <this->size ; i++) {
-        board[i] = new MyChar();
+        board[i] = new MyChar(size);
     }
     for (int i = 0; i <this->size ; i++) {
         for (int j = 0; j <this->size ; j++) {
