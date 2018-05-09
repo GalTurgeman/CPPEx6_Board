@@ -131,7 +131,7 @@ bool Board::operator==(const Board &l) const{
  */
 Board::~Board() {
 //    cout<<"destructor"<<endl;
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         delete[] board[i];
     }
     delete[](board);

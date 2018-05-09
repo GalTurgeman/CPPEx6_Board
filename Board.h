@@ -35,8 +35,8 @@ public:
 
 };
 inline ostream &operator<<(ostream &output, const Board &b) {
-    for (int i = 0; i < b.size; ++i) {
-        for (int j = 0; j < b.size; ++j) {
+    for (int i = 0; i < b.size; i++) {
+        for (int j = 0; j < b.size; j++) {
             output << b.board[i][j].getChar();
         }
         output << endl;
