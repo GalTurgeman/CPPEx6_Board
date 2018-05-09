@@ -30,7 +30,9 @@ public:
     Board &operator=(char);
 
     Board &operator=(const Board &);
-    bool operator==(const Board &);
+    bool operator==(const Board &)const;
+
+
 
 };
 inline ostream &operator<<(ostream &output, const Board &b) {
@@ -42,6 +44,8 @@ inline ostream &operator<<(ostream &output, const Board &b) {
     }
     return output;
 }
+
+
 
 
 

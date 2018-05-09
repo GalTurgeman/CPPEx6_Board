@@ -84,12 +84,12 @@ Board &Board::operator=(const Board & b) {
 //    return this->board[p.first][p.second];
 //}
 
-bool Board::operator==(const Board &l){
+bool Board::operator==(const Board &l) const{
     if(size != l.size) return false;
     else{
         for (int i = 0; i <size; ++i) {
             for (int j = 0; j <size ; ++j) {
-             if(this->board[i][j] != l.board[i][j]) return false;
+             if(board[i][j] != l.board[i][j]) return false;
             }
         }
     }
