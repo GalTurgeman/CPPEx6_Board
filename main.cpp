@@ -30,7 +30,7 @@ int main() {
 
 	board1 = '.';     // Fill the entire board with "."
 	cout << board1 << endl;  /* Shows an empty board, as above */
-	try { 
+	try {
 		board1 = 'a';        // This should raise an exception
 	} catch (const IllegalCharException& ex) {
 		cout << "Illegal char: " << ex.theChar() << endl;  // "Illegal char: a"

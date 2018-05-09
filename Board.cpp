@@ -30,9 +30,9 @@ Board::Board(int s) {
 }
 /**
  * Copy Constructor perform deep copy.
- * @param b
+ * @param Board
  */
-Board::Board(const Board &b) {
+Board::Board(const Board& b) {
     this->size = b.size;
     board = new MyChar*[size];
     for (int i = 0; i <this->size ; ++i) {
@@ -66,7 +66,7 @@ Board &Board::operator=(char c) {
  * @param char c
  * @return &Board
  */
-Board &Board::operator=(const Board & b) {
+Board &Board::operator=(const Board& b) {
 
         for (int i = 0; i < this->size; ++i) {
             for (int j = 0; j < this->size; ++j) {
@@ -76,14 +76,23 @@ Board &Board::operator=(const Board & b) {
         return *this;
 
 }
-//MyChar &Board::operator[] (pair<int,int> p) {
-//    if(p.first >= this->size || p.second >= this->size || p.second < 0 || p.first < 0){
-//        IllegalCoordinateException ex(p.first,p.second);
-//        throw ex;
-//    }
-//    return this->board[p.first][p.second];
-//}
-
+/**
+ * override '[]'
+ * @param list l
+ * @return &MyChar
+ */
+MyChar& Board::operator[](list<int> l) {
+    if(l.front() >= this->size || l.back() >= this->size || l.back() < 0 || l.front() < 0){
+        IllegalCoordinateException ex(l.front(),l.back());
+        throw ex;
+    }
+    return board[l.front()][l.back()];
+}
+/**
+ * Check if all board equal to other board.
+ * @param Board
+ * @return boolean
+ */
 bool Board::operator==(const Board &l) const{
     if(size != l.size) return false;
     else{
@@ -95,7 +104,11 @@ bool Board::operator==(const Board &l) const{
     }
     return true;
 }
-
+/**
+ * destructor
+ * @param
+ *
+ */
 Board::~Board() {
 //    cout<<"destructor"<<endl;
     for (int i = 0; i < size; ++i) {
@@ -104,10 +117,3 @@ Board::~Board() {
     delete[](board);
 }
 
-MyChar& Board::operator[](list<int> l) {
-    if(l.front() >= this->size || l.back() >= this->size || l.back() < 0 || l.front() < 0){
-        IllegalCoordinateException ex(l.front(),l.back());
-        throw ex;
-    }
-    return board[l.front()][l.back()];
-}

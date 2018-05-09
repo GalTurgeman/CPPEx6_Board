@@ -49,22 +49,50 @@ MyChar &MyChar::operator=(char c) {
         return *this;
     }
 }
+/**
+ * override '='
+ * @param MyChar
+ * @return &MyChar
+ */
 MyChar &MyChar::operator=(const MyChar& mc) {
     this->c = mc.c;
     return *this;
 }
+/**
+ *
+ * @return
+ */
 MyChar::operator char() {
     return this->c;
-}
+}/**
+ * override '=='
+ * @param MyChar
+ * @return boolean
+ */
 bool MyChar::operator == (const MyChar& mc ) const{
     return c == mc.c;
 }
+/**
+ * override '-='
+ * @param char
+ * @return boolean
+ */
 bool MyChar::operator==(char c) const{
     return this->c == c;
 }
+/**
+ * override '!='
+ * @param MyChar
+ * @return boolean
+ */
 bool MyChar::operator != (const MyChar& mc ) const{
     return c != mc.c;
 }
+/**
+ * override '!='
+ * @param Char
+ * @return boolean
+ */
 bool MyChar::operator!=(char c) const{
     return this->c != c;
 }

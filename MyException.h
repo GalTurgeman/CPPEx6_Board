@@ -12,7 +12,9 @@
 #include <exception>
 
 using namespace std;
-
+/**
+ * Handle IllegalCoordinateException
+ */
 class IllegalCoordinateException : public exception {
 public:
     int x, y;
@@ -23,6 +25,9 @@ public:
         return to_string(x)+ "," +to_string(y);
     }
 };
+/**
+ * Handle IllegalCharException
+ */
 class IllegalCharException : public exception {
 public:
     char c;
