@@ -74,11 +74,11 @@ Board &Board::operator=(const Board& other) {
             clean(*this);
             size = other.size;
             board = new MyChar*[size];
-            for (int i = 0; i <size ; ++i) {
+            for (int i = 0; i <size ; i++) {
                 board[i] = new MyChar[size];
             }
-            for (int i = 0; i < this->size; ++i) {
-                for (int j = 0; j < this->size; ++j) {
+            for (int i = 0; i < this->size; i++) {
+                for (int j = 0; j < this->size; j++) {
                     this->board[i][j] = MyChar{other.board[i][j].getChar()};
                 }
             }
