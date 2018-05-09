@@ -19,14 +19,15 @@ Board::Board() {
  */
 Board::Board(int s) {
     this->size = s;
-    this->board = new MyChar*[size];
-    for (int i = 0; i <this->size ; i++) {
+    this->board = new MyChar *[size];
+    for (int i = 0; i < this->size; i++) {
         this->board[i] = new MyChar();
-        for (int j = 1; j <this->size ; j++) {
+    }
+    for (int i = 0; i < this->size; i++) {
+        for (int j = 0; j < this->size; j++) {
             this->board[i][j].setChar('.');
         }
     }
-
 }
 /**
  * Copy Constructor perform deep copy.
