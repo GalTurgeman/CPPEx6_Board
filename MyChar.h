@@ -21,9 +21,9 @@ public:
     MyChar&operator =(char);
     MyChar&operator=(const MyChar&);
     bool operator == (const MyChar&)const;
-    bool operator == (char);
+    bool operator == (char)const;
     bool operator != (const MyChar& )const;
-    bool operator != (char);
+    bool operator != (char)const;
     operator char();
     friend ostream& operator<<(std::ostream & output, const MyChar mc);
 };
