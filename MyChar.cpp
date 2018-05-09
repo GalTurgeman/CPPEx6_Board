@@ -56,13 +56,13 @@ MyChar &MyChar::operator=(const MyChar& mc) {
 MyChar::operator char() {
     return this->c;
 }
-bool MyChar::operator == (const MyChar& mc ){
+bool MyChar::operator == (const MyChar& mc ) const{
     return c == mc.c;
 }
 bool MyChar::operator==(char c) {
     return this->c == c;
 }
-bool MyChar::operator != (const MyChar& mc ){
+bool MyChar::operator != (const MyChar& mc ) const{
     return c != mc.c;
 }
 bool MyChar::operator!=(char c) {
