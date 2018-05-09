@@ -1,5 +1,5 @@
-CXX=clang++-5.0
-CXXFLAGS=-std=c++17 
+CXX=clang++
+CXXFLAGS=-std=c++14
 
 all: Board.o MyChar.o 
 

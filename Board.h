@@ -7,6 +7,7 @@
 #include <iostream>
 #include "MyChar.h"
 #include <string>
+#include <list>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ public:
     friend ostream &operator<<(ostream &output, const Board &b);
 
     MyChar &operator [] ( pair<int, int>);
-
+    MyChar &operator [] (list<int>);
     Board &operator=(char);
 
     Board &operator=(const Board &);

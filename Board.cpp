@@ -77,12 +77,11 @@ Board &Board::operator=(const Board & b) {
 
 }
 MyChar &Board::operator[] (pair<int,int> p) {
-
     if(p.first >= this->size || p.second >= this->size || p.second < 0 || p.first < 0){
         IllegalCoordinateException ex(p.first,p.second);
         throw ex;
     }
-    else return this->board[p.first][p.second];
+    return this->board[p.first][p.second];
 }
 
 bool Board::operator==(const Board &l){
@@ -99,7 +98,15 @@ bool Board::operator==(const Board &l){
 Board::~Board() {
 //    cout<<"destructor"<<endl;
     for (int i = 0; i < size; ++i) {
-        delete board[i];
+        delete[] board[i];
     }
-    delete(board);
+    delete[](board);
+}
+
+MyChar &Board::operator[](list<int> l) {
+    if(l.front() >= this->size || l.back() >= this->size || l.back() < 0 || l.front() < 0){
+        IllegalCoordinateException ex(l.front(),l.back());
+        throw ex;
+    }
+    return this->board[l.front()][l.back()];
 }
