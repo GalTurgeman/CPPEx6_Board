@@ -25,7 +25,7 @@ public:
     //______________________//
     friend ostream &operator<<(ostream &output, const Board &b);
 
-    MyChar &operator [] ( pair<int, int>);
+//    MyChar &operator [] ( pair<int, int>);
     MyChar &operator [] (list<int>);
     Board &operator=(char);
 

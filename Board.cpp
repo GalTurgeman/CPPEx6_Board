@@ -76,13 +76,13 @@ Board &Board::operator=(const Board & b) {
         return *this;
 
 }
-MyChar &Board::operator[] (pair<int,int> p) {
-    if(p.first >= this->size || p.second >= this->size || p.second < 0 || p.first < 0){
-        IllegalCoordinateException ex(p.first,p.second);
-        throw ex;
-    }
-    return this->board[p.first][p.second];
-}
+//MyChar &Board::operator[] (pair<int,int> p) {
+//    if(p.first >= this->size || p.second >= this->size || p.second < 0 || p.first < 0){
+//        IllegalCoordinateException ex(p.first,p.second);
+//        throw ex;
+//    }
+//    return this->board[p.first][p.second];
+//}
 
 bool Board::operator==(const Board &l){
     if(size != l.size) return false;
@@ -103,10 +103,10 @@ Board::~Board() {
     delete[](board);
 }
 
-MyChar &Board::operator[](list<int> l) {
+MyChar& Board::operator[](list<int> l) {
     if(l.front() >= this->size || l.back() >= this->size || l.back() < 0 || l.front() < 0){
         IllegalCoordinateException ex(l.front(),l.back());
         throw ex;
     }
-    return this->board[l.front()][l.back()];
+    return board[l.front()][l.back()];
 }
